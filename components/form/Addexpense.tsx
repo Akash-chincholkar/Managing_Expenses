@@ -24,13 +24,12 @@ const AddExpenseForm = () => {
     defaultValues: {
       amount: "",
       purpose: "",
-      goal_id: "",
     },
   });
 
   function onSubmit(data: ExpenseData) {
 
-    const res= saveExpense({amount:data.amount,purpose:data.purpose,balance_after:null,goal_id:data.goal_id})
+    const res= saveExpense({amount:data.amount,purpose:data.purpose,balance_after:null})
     console.log(res);
     router.push("/");
   }
