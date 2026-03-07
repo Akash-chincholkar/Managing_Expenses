@@ -11,8 +11,10 @@ import path from 'path';
   waitForConnections: true,
   connectionLimit: 10,
   ssl: {
-    ca: fs.readFileSync(path.join(process.cwd(), 'certs/ca.pem')),
+   ca: process.env.DATABASE_CERT,
   }
 });
+
+
 
 export default db;
