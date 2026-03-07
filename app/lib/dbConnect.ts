@@ -10,8 +10,12 @@ import path from 'path';
   database: process.env.DB_NAME!,
   waitForConnections: true,
   connectionLimit: 10,
-  ssl: {
-   ca: process.env.DATABASE_CERT,
+ssl: {
+    // 1. Force correct line breaks in the certificate
+    ca: process.env.DATABASE_CERT 
+        ? process.env.DATABASE_CERT.replace(/\\n/g, '\n') 
+        : undefined,
+    rejectUnauthorized: true 
   }
 });
 
