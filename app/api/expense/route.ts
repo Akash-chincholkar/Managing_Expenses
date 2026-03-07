@@ -4,7 +4,7 @@ export async function GET(request:NextRequest){
     const {searchParams}= new URL(request.url);
     const goal_id = searchParams.get("goal_id");
     console.log("goal_id received:", goal_id);
-    const myQuery= `SELECT * FROM EXPENSES WHERE goal_id = ?  ORDER BY created_at DESC 
+    const myQuery= `SELECT * FROM expenses WHERE goal_id = ?  ORDER BY created_at DESC 
   LIMIT 5`;
          const [table]:any= await db.execute(myQuery,[Number(goal_id)]);
 
