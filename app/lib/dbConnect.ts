@@ -15,7 +15,7 @@ ssl: {
     ca: process.env.DATABASE_CERT 
         ? process.env.DATABASE_CERT.replace(/\\n/g, '\n') 
         : undefined,
-    rejectUnauthorized: true 
+    rejectUnauthorized: false
   }
 });
 
