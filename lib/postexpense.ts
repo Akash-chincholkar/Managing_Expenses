@@ -3,7 +3,7 @@ import { getGoal } from "./fetchgoal";
 
 
 async function createPrompt(text:string){
-    const url=process.env.BASEURL|| 'http://localhost:3000'
+    const url=process.env.NEXT_PUBLIC_BASEURL|| 'http://localhost:3000'
     const res= await fetch(`${url}/api/Parsing`,{
         method:"POST",
         headers: { "Content-Type": "application/json" },
@@ -26,7 +26,7 @@ export async function saveExpense(expense:{
   ...expense,
   goal_id: goal.balance.id
 };
-     const url=process.env.BASEURL|| 'http://localhost:3000'
+     const url=process.env.NEXT_PUBLIC_BASEURL|| 'http://localhost:3000'
     const res= await fetch(`${url}/api/expense`,{
         method:"POST",
          headers: { "Content-Type": "application/json" },

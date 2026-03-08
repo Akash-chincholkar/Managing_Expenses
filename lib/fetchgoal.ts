@@ -1,5 +1,5 @@
 async function getGoal(){
-     const url=process.env.BASEURL|| 'http://localhost:3000'
+     const url=process.env.NEXT_PUBLIC_BASEURL|| 'http://localhost:3000'
     const res = await fetch(`${url}/api/goal`,{
         cache:"no-store",
     });
@@ -13,7 +13,7 @@ async function getExpense(){
     const goal = await getGoal();
 const goal_id = goal.balance.id;
 console.log("this is goalid",goal_id);
-const url=process.env.BASEURL|| 'http://localhost:3000'
+const url=process.env.NEXT_PUBLIC_BASEURL|| 'http://localhost:3000'
     const res= await fetch(`${url}/api/expense?goal_id=${goal_id}`,{
         cache:"no-store",
     });
@@ -26,7 +26,7 @@ async function saveGoal(Goal:{
     amount:number;
     use_till:string;
 }) {
-    const url=process.env.BASEURL|| 'http://localhost:3000'
+    const url=process.env.NEXT_PUBLIC_BASEURL|| 'http://localhost:3000'
     const res= await fetch(`${url}/api/goal`,{
         method:"POST",
          headers: { "Content-Type": "application/json" },
