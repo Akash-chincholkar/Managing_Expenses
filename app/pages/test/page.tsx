@@ -1,3 +1,5 @@
+"use client"
+
 import AddExpenseForm from "@/components/form/Addexpense"
 import VoiceRecorder from "@/components/SpeechTranscribe/voiceRecorder/Voicerecorder"
 

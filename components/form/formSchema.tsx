@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/field"
 import { goalSchema, GoalInput, GoalData } from "./zod";
 
+
 const today = new Date();
 const formatted=today.toISOString().split("T")[0];
 console.log(formatted);
@@ -32,13 +33,13 @@ const AddgoalForm = () => {
      return router.push("/");
   }
 
-  function onSubmit(data: GoalData) {
+ async function onSubmit(data: GoalData) {
     
     const date=new Date(data.use_till)
     const end_date=date.toISOString().split("T")[0];
     console.log(end_date);
     const goal=data.amount;
-    const res=  saveGoal({amount:goal,use_till:end_date});
+    const res=  await saveGoal({amount:goal,use_till:end_date});
     console.log(res)
       Navigatehome();
     console.log("SUBMIT CALLED");

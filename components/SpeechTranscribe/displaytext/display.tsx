@@ -82,7 +82,9 @@ const DisplayText: React.FC<TextProps> = ({ text: initialText }) => {
 
           {/* Primary Action */}
           <button
-            onClick={() => handleConfirm(editableText)} // Passing the NEW text
+            onClick={async () => {await  handleConfirm(editableText);
+              window.location.reload();
+            }} // Passing the NEW text
             className="
               order-1 sm:order-2
               group relative flex w-full sm:w-40 items-center justify-center gap-2 rounded-full 
